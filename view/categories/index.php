@@ -5,7 +5,7 @@
     <form action="<?php echo (constant('URL')); ?>category/save" class="form mb-3" method="POST">
         <div class="row mt-3 d-flex justify-content-center">
             <div class="form-group">
-                <input type="text" name="categoryName" id="categoryName" class="form-control text-center" placeholder="Nombre de la categoría" required>
+                <input type="text" name="category" id="category" class="form-control text-center" placeholder="Nombre de la categoría" required>
             </div>
             <button type="submit" id="create" class="btn btn-primary">Agregar</button>
         </div>

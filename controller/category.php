@@ -6,6 +6,7 @@ class Category extends Controller
     {
         parent::__construct();
         // $this->model = new Model();
+        $this->url = 'category/index';
     }
 
 
@@ -18,12 +19,10 @@ class Category extends Controller
 
     public function save()
     {
-        if (isset($_POST['prodName']) && isset($_POST['units']) && isset($_POST['category'])) {
-            $prodName = $_POST['prodName'];
-            $units = $_POST['units'];
+        if (isset($_POST['category'])) {
             $category = $_POST['category'];
-            $this->model->save($prodName, $units, $category);
-            $this->back();
+            $this->model->save($category);
+            $this->back($this->url);
         }
     }
 }

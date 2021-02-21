@@ -6,47 +6,31 @@
             parent::__construct();
         }
 
-        public function save($username, $password) {
+        public function save($category) {
             try {
-                $query = $this->connection->prepare("INSERT INTO user(username, password) VALUES(:username, :password)");
-                $query->bindParam(':username', $username);
-                $query->bindParam(':password', $password);
+                $query = $this->connection->prepare("INSERT INTO Category(categoryName) VALUES(:category)");
+                $query->bindParam(':category', $category);
                 $query->execute();
             } catch (PDOException $err) {
                 echo($err->getMessage());
             }
         }
 
-        public function list() {
-            try {
-                $query = $this->connection->prepare("SELECT * FROM user");
-                $query->execute();
-                $users = $query->fetchAll(PDO::FETCH_OBJ);
-                return $users;
 
+        public function update($category) {
+            try {
+                $query = $this->connection->prepare("INSERT INTO Category(categoryName) VALUES(:category)");
+                $query->bindParam(':category', $category);
+                $query->execute();
             } catch (PDOException $err) {
                 echo($err->getMessage());
             }
         }
 
-        public function update() {
+        public function delete($category) {
             try {
-                $query = $this->connection->prepare("INSERT INTO user(username, password) VALUES(?, ?)");
-                foreach ($args as $arg) {
-                    $param_n = 1;
-                    $query->bindParam($param_n, $arg);
-                }
-                $query->execute();
-
-            } catch (PDOException $err) {
-                echo($err->getMessage());
-            }
-        }
-
-        public function delete($userId) {
-            try {
-                $query = $this->connection->prepare("DELETE FROM user WHERE id = :userId");
-                $query->bindParam(":userId", $userId);
+                $query = $this->connection->prepare("INSERT INTO Category(categoryName) VALUES(:category)");
+                $query->bindParam(':category', $category);
                 $query->execute();
             } catch (PDOException $err) {
                 echo($err->getMessage());

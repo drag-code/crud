@@ -15,9 +15,11 @@
             }
         }
 
-        function back() {
-            $back = constant('URL');
-            header("Location: $back");
+        function back($route="") {
+            $url = constant('URL');
+            if($route)
+                $url .= $route; 
+            header("Location: $url");
         }
     }
 ?>
