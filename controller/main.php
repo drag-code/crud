@@ -64,6 +64,12 @@ class Main extends Controller
             $this->back();
         }
     }
+
+    public function delete()
+    {
+        $id = $_POST['id'];
+        $this->model->delete($id);
+    }
 }
     /*$action = $_GET['action'];
     if (isset($action)) {

@@ -19,6 +19,7 @@ const btnsDelete = document.querySelectorAll(".delete");
 btnsDelete.forEach((item) => {
     item.addEventListener("click", () => {
         const id = item.id;
-        deleteUser(id);
+        if(confirm("¿Realmente desea eliminar este producto?"))
+            deleteUser(id);
     });
 });

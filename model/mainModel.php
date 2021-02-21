@@ -45,10 +45,10 @@
             }
         }
 
-        public function delete($userId) {
+        public function delete($id) {
             try {
-                $query = $this->connection->prepare("DELETE FROM user WHERE id = :userId");
-                $query->bindParam(":userId", $userId);
+                $query = $this->connection->prepare("DELETE FROM Product WHERE id = :id");
+                $query->bindParam(":id", $id);
                 $query->execute();
             } catch (PDOException $err) {
                 echo($err->getMessage());

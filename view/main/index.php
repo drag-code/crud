@@ -54,7 +54,7 @@
                                 <div>
                                     <a class="btn btn-primary text-white" href="<?php echo (constant('URL')) ?>main/getOne?id=<?php echo ($product->id) ?>">Ver</a>
                                     <a class="btn btn-warning text-white" href="<?php echo (constant('URL')) ?>main/updateView?id=<?php echo ($product->id) ?>">Actualizar</a>
-                                    <button class="btn btn-danger">Eliminar</button>
+                                    <button class="btn btn-danger delete" id="<?php echo ($product->id) ?>">Eliminar</button>
                                 </div>
                             </td>
                         </tr>
