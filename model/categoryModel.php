@@ -28,10 +28,10 @@
             }
         }
 
-        public function delete($category) {
+        public function delete($id) {
             try {
-                $query = $this->connection->prepare("INSERT INTO Category(categoryName) VALUES(:category)");
-                $query->bindParam(':category', $category);
+                $query = $this->connection->prepare("DELETE Category WHERE id = :id");
+                $query->bindParam(':id', $id);
                 $query->execute();
             } catch (PDOException $err) {
                 echo($err->getMessage());

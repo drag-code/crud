@@ -1,5 +1,5 @@
-const deleteUser = async (id) => {
-    const url = "http://localhost/CRUD/main/delete";
+const remove = async (id, controller) => {
+    const url = controller;
     $.ajax({
         url,
         type: "POST",
@@ -19,7 +19,9 @@ const btnsDelete = document.querySelectorAll(".delete");
 btnsDelete.forEach((item) => {
     item.addEventListener("click", () => {
         const id = item.id;
-        if(confirm("¿Realmente desea eliminar este producto?"))
-            deleteUser(id);
+        const controller = item.dataset.ct;
+        console.log(id);
+        if(confirm("¿Realmente desea eliminar este registro?"))
+            remove(id, controller);
     });
 });

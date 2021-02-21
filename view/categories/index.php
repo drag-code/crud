@@ -35,7 +35,7 @@
                             <td class="d-flex justify-content-center">
                                 <div>
                                     <a class="btn btn-warning text-white" href="<?php echo (constant('URL')) ?>category/updateView?id=<?php echo ($category->id) ?>">Actualizar</a>
-                                    <button class="btn btn-danger">Eliminar</button>
+                                    <button class="btn btn-danger delete" id="<?php echo ($category->id) ?>" data-ct="<?php echo (constant('URL')); ?>category/delete">Eliminar</button>
                                 </div>
                             </td>
                         </tr>

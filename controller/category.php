@@ -45,6 +45,14 @@ class Category extends Controller
             $this->view->render('categories/update');
         }
     }
+
+    public function delete()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $this->model->delete($id);
+        }
+    }
 }
     /*$action = $_GET['action'];
     if (isset($action)) {
