@@ -9,7 +9,7 @@
                 <a class="nav-link" href="<?php echo (constant('URL'));?>">Productos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo (constant('URL'));?>product/index">Categorías</a>
+                <a class="nav-link" href="<?php echo (constant('URL'));?>category/index">Categorías</a>
             </li>
 
         </ul>

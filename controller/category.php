@@ -1,5 +1,5 @@
 <?php
-class Product extends Controller
+class Category extends Controller
 {
 
     public function __construct()
@@ -11,7 +11,9 @@ class Product extends Controller
 
     public function index()
     {
-        $this->view->render('products/index');
+        $categories = $this->model->getCategories();
+        $this->view->categories = $categories;
+        $this->view->render('categories/index');
     }
 
     public function save()

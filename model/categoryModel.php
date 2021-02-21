@@ -1,7 +1,7 @@
 <?php
     
 
-    class mainModel extends Model {
+    class categoryModel extends Model {
         public function __construct() {
             parent::__construct();
         }
@@ -48,6 +48,17 @@
                 $query = $this->connection->prepare("DELETE FROM user WHERE id = :userId");
                 $query->bindParam(":userId", $userId);
                 $query->execute();
+            } catch (PDOException $err) {
+                echo($err->getMessage());
+            }
+        }
+
+        public function getCategories() {
+            try {
+                $query = $this->connection->prepare("SELECT id, categoryName FROM Category");
+                $query->execute();
+                $categories = $query->fetchAll(PDO::FETCH_OBJ);
+                return $categories;
             } catch (PDOException $err) {
                 echo($err->getMessage());
             }
