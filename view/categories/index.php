@@ -28,16 +28,18 @@
                 <tbody>
                     <?php
                     foreach ($this->categories as $category) {
-                        echo "<tr>
-                            <td>{$category->id}</td>
-                            <td>{$category->categoryName}</td>
-                            <td class='d-flex justify-content-center'>
+                    ?>
+                        <tr>
+                            <td><?php echo ($category->id) ?></td>
+                            <td><?php echo ($category->categoryName) ?></td>
+                            <td class="d-flex justify-content-center">
                                 <div>
-                                    <button class='btn btn-warning'>Actualizar</button>
-                                    <button class='btn btn-danger'>Eliminar</button>
+                                    <a class="btn btn-warning text-white" href="<?php echo (constant('URL')) ?>category/updateView?id=<?php echo ($category->id) ?>">Actualizar</a>
+                                    <button class="btn btn-danger">Eliminar</button>
                                 </div>
                             </td>
-                        </tr>";
+                        </tr>
+                    <?php
                     }
                     ?>
                 </tbody>

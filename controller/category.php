@@ -25,6 +25,26 @@ class Category extends Controller
             $this->back($this->url);
         }
     }
+
+    public function update()
+    {
+        if (isset($_POST['id']) && isset($_POST['category'])) {
+            $id = $_POST['id'];
+            $category = $_POST['category'];
+            $this->model->update($id, $category);
+            $this->back($this->url);
+        }
+    }
+
+    public function updateView()
+    {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $category = $this->model->getCategory($id);
+            $this->view->category = $category; 
+            $this->view->render('categories/update');
+        }
+    }
 }
     /*$action = $_GET['action'];
     if (isset($action)) {
